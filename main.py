@@ -62,3 +62,27 @@ def calculate_discount(total_amount, senior_id):
         total_amount -= discount
         print(f"\n10% Senior Citizen Discount Applied: -₱{discount:.2f}")
     return total_amount
+
+# TODO (TEVES): Display details
+def display_receipt(order_list, final_amount, customer_name, senior_id):
+    print("\n**********************************")
+    print("         CUSTOMER RECEIPT         ")
+    print("**********************************\n")
+    print("= = = = = ORDER DETAILS = = = = =")
+    for item in order_list:
+        print("Product:", item['product_name'])
+        print(f"Price:    ₱{item['price']:.2f}")
+        print(f"Quantity: {item['quantity']}")
+        print(f"Total:    ₱{item['total_price']:.2f}\n")
+    
+    print("= = = =  CUSTOMER DETAILS = = = =")
+    print(f"Customer Name: {customer_name}")
+    print("Senior ID No.:", "N/A" if not senior_id else senior_id, "\n")
+    
+    print("= = = = = = = BILL = = = = = == =")
+    print(f"Grand Total: ₱{final_amount:.2f}\n")
+    
+    print("Thank you for your order!")
+    print("\n**********************************\n")
+
+get_order_details()
