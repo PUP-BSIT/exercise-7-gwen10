@@ -39,3 +39,17 @@ def get_order_details():
 # TODO (GONATO): Calculate total price.
 def calculate_total_price(order_list):
     return sum(item['total_price'] for item in order_list)
+
+# TODO (MIGUEL): Input customer name and senior id no.
+def senior_discount(order_list):
+    customer_name = input("\nEnter your name: ").strip()
+    senior_id = input(
+        "Enter senior ID number (leave blank if not senior citizen): "
+    ).strip()
+
+    if senior_id and not senior_id.isdigit():
+        print("Invalid senior ID. Please enter a numeric ID or leave blank.")
+        return senior_discount(order_list)
+
+    total_amount = calculate_total_price(order_list)
+    return total_amount, customer_name, senior_id
