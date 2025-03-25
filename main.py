@@ -35,3 +35,7 @@ def get_order_details():
     final_amount = calculate_discount(total_amount, senior_id)
 
     display_receipt(order_list, final_amount, customer_name, senior_id)
+
+# TODO (GONATO): Calculate total price.
+def calculate_total_price(order_list):
+    return sum(item['total_price'] for item in order_list)
