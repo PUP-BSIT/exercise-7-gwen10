@@ -53,3 +53,12 @@ def senior_discount(order_list):
 
     total_amount = calculate_total_price(order_list)
     return total_amount, customer_name, senior_id
+
+# TODO (SARIO): Calculate discount rate.
+def calculate_discount(total_amount, senior_id):
+    if senior_id:
+        discount_rate = DISCOUNT_RATE
+        discount = total_amount * discount_rate
+        total_amount -= discount
+        print(f"\n10% Senior Citizen Discount Applied: -₱{discount:.2f}")
+    return total_amount
